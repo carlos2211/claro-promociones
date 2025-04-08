@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import "tailwindcss";
+@import "./portalStyles/iconsPortal.css";
+
+
+@theme {  --color-claro-red: #DA291C; }
+
+@font-face {
+    font-family: "AMX";
+    src: url("/fonts/AMX-Bold.woff2")
+        format("woff2"),
+      url("/fonts/AMX-Bold.woff")
+        format("woff"),
+      url("/fonts/AMX-Bold.ttf")
+        format("truetype");
+    font-weight: bold;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "AMX-Regular";
+    src: url("/fonts/AMX-Regular.woff2")
+        format("woff2"),
+      url("/fonts/AMX-Regular.woff")
+        format("woff"),
+      url("/fonts/AMX-Regular.ttf")
+        format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "AMX-Medium";
+    src: url("/fonts/AMX-Medium.woff2")
+        format("woff2"),
+      url("/fonts/AMX-Medium.woff")
+        format("woff"),
+      url("/fonts/AMX-Medium.ttf")
+        format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
