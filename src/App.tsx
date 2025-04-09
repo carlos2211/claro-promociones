@@ -5,8 +5,8 @@ import { useModalShop } from "./store/modal";
 import TabsHome from "./components/TabsHome";
 import Footer from "./components/Footer";
 import HuinchaContratarPorTelefono from "./components/HuinchaContratarTelefono";
-import PlanesHogar from "./components/hogar/PlanesHogar"; 
-import PlanesMovil from "./components/movil/PlanesMoviles"; 
+import PlanesHogar from "./components/hogar/PlanesHogarHome"; 
+import PlanesMovil from "./components/movil/PlanesMovilesHome"; 
 
 function App() {
   const ModalShopState = useModalShop((state) => state.open);

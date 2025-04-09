@@ -7,18 +7,17 @@ interface PlanData {
   price: string;
 }
 
-interface PlanesDoblePackProps {
+interface PlanesInternetHogarProps {
   plans: PlanData[];
 }
 
-const PlanesDoblePack: React.FC<PlanesDoblePackProps> = ({ plans }) => {
+const PlanesInternetHogar: React.FC<PlanesInternetHogarProps> = ({ plans }) => {
   return (
     <div>
-      <h1 className="justify-self-center font-bold">
-        La combinación ideal para tu hogar
+      <h1 className="justify-self-center font-bold text-2xl">
+        Maratonear es un buen plan, contrata
       </h1>
       <div className="flex justify-center gap-10">
-        <CardPlanNew />
         <CardPlanNew />
         <CardPlanNew />
       </div>
@@ -26,4 +25,4 @@ const PlanesDoblePack: React.FC<PlanesDoblePackProps> = ({ plans }) => {
   );
 };
 
-export default PlanesDoblePack;
+export default PlanesInternetHogar;
