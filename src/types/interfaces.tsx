@@ -1,4 +1,6 @@
 export interface PlanHogar {
+  extensor: any;
+  description: string | undefined;
   id: string;
   plan: string;
   subtitle: string;

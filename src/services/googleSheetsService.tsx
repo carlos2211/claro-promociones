@@ -8,9 +8,9 @@ import {
   movilEquipoMasPlan,
   HogarInternetHogar,
   hogarDoblePack,
-} from "../types/interfaces"; // asegúrate de que este path sea el correcto
+} from "../types/interfaces"; 
 
-// URLS por hoja publicada como CSV
+
 const urls = {
   homeHogar:
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vSfXC46_xSERgX5FZWR0sYqsh_ugtNH5F6J83vNDwzct_8RXlSMMWoRQTwqj16skmxBGoxX_l2zfk6v/pub?gid=1744296888&single=true&output=csv",
@@ -48,7 +48,7 @@ type SheetTypeMap = {
  * @param hoja Nombre de la hoja (clave del objeto urls)
  * @returns Array con los datos tipados correctamente
  */
-export const DataGoogleSheets = async <T extends SheetKey>(
+export const getSheetData = async <T extends SheetKey>(
   hoja: T
 ): Promise<SheetTypeMap[T][]> => {
   try {
@@ -67,4 +67,4 @@ export const DataGoogleSheets = async <T extends SheetKey>(
   }
 };
 
-export default DataGoogleSheets;
+export default getSheetData;
