@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CardPlanNew } from "./CardPlanNew";
-import { DataGoogleSheets } from "../services/googleSheetsService";
+import { getSheetData } from "../services/googleSheetsService";
 import { PlanHogar } from "../types/interfaces";
 
-const PlanesHogarHome: React.FC = () => {
+interface PlanesHogarHomeProps {
+  plans: any[]; 
+}
+
+const PlanesHogarHome: React.FC<PlanesHogarHomeProps> = ({ }) => {
   const [planes, setPlanes] = useState<PlanHogar[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
     const cargarPlanes = async () => {
-      const data = await DataGoogleSheets("homeHogar");
+      const data = await getSheetData("homeHogar");
       setPlanes(data);
       console.log(data);
     };
@@ -22,6 +26,8 @@ const PlanesHogarHome: React.FC = () => {
     navigate("/planes-hogar");
   };
 
+
+
   return (
     <div className="place-items-center">
       <h1 className="justify-self-center font-bold text-2xl mb-6">
@@ -29,12 +35,15 @@ const PlanesHogarHome: React.FC = () => {
       </h1>
 
       <div className="flex flex-wrap justify-center gap-10">
-        {planes.map((plan) => (
+        {planes.map((plan, index) => (
           <CardPlanNew
-            key={plan.id} title={""} description={""} price={""}            // title={plan.plan}
-            // description={plan.subtitle}
-            // price={`$${plan.offer_price.toLocaleString()}`}
-            // imagen={plan.imagen} 
+            key={plan.id?.toString() || index.toString()}
+            title={plan.plan}
+            description={plan.subtitle}
+            price={plan.offer_price ? plan.offer_price.toString() : ""}
+            normalPrice={plan.normal_price ? plan.normal_price.toString() : ""}
+            badge={plan.description}
+            details={`• Bajada: ${plan.down || "-"} • Subida: ${plan.up || "-"} • WiFi: ${plan.wifi_technology || "-"} • Extensor: ${plan.extensor || "-"}`}
           />
         ))}
       </div>

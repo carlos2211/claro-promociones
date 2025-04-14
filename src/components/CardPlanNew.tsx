@@ -81,7 +81,7 @@ export const CardPlanNew: React.FC<CardPlanNewProps> = ({
             className="h-0 w-full overflow-hidden overflow-y-hidden duration-400"
           >
             {details?.split("\u2022").map((text, i) => (
-              <PlanCarac key={i} text={text.trim()} />
+              <PlanCarac key={i} text={text.trim()} label={""} value={""} />
             ))}
             <div className="flex items-center justify-center px-4 pt-3 pb-8">
               <button className="text-[#0097A9] font-[500] underline cursor-pointer">
